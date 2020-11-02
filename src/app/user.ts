@@ -2,8 +2,8 @@ export class User {
     constructor(
         public name: string,
         public email: string,
-        public phone: number,
-        public course: string,
+        public username: number,
+        public role: string,
         public timePref: string,
         public subscribe: boolean
     ){}

@@ -1,66 +1,38 @@
-<div class="container-fluid">
-  <h1>Bootcamp Enrollment Form</h1>
-    <form #userform="ngForm">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid" class="form-control is-invalid" name="userName" [(ngModel)]="userModel.name">
-        </div>
-        <div class="form-group">
-            <label>email</label>
-            <input type="email" class="form-control"  name="email" [(ngModel)]="userModel.email">
-        </div>
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel"  required #phone="ngModel" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched" class="form-control" name="phone" [(ngModel)]="userModel.phone">
-            <div class="invalid-feedback">
-                Please Enter a Phone number
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Company Product Name
+            <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+        </section>
+        <div class="login-group">
+            <clr-select-container>
+                <label class="clr-sr-only">User Role</label>
+                <select clrSelect name="type" [(ngModel)]="form.type">
+                    <option value="Engineer">Engineer</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </clr-select-container>
+            <clr-input-container>
+                <label class="clr-sr-only">Username</label>
+                <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="form.username"/>
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="form.password"/>
+            </clr-password-container>
+            <clr-checkbox-wrapper>
+                <label>Remember me</label>
+                <input type="checkbox" name="rememberMe" clrCheckbox [(ngModel)]="form.rememberMe"/>
+            </clr-checkbox-wrapper>
+            <div class="error active">
+                Invalid user name or password
             </div>
+            <button type="submit" class="btn btn-primary">NEXT</button>
+            <a class="signup" routerLink="/register">Sign up for a Company ID</a>
+            <a href="javascript://" class="signup">Sign up for a Company ID</a>
+            <router-outlet></router-outlet>
         </div>
-        <div class="form-group">
-            <select class="custom-select" [(ngModel)]="userModel.course" name='course'>
-                <option >I am interested in</option>
-                <option *ngFor="let topic of topics">{{topic}}</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label> Time preference</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name='timePref' [(ngModel)]="userModel.timePref" value="morning_6AM">
-                <label class="form-check-label">Morning (6 AM - 12 PM)</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" [(ngModel)]="userModel.timePref"name ="timePref" value="evening_5PM">
-                <label class="form-check-label">Evening (5 PM - 12 AM)</label>
-            </div>
-        </div>
-        <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" name="subscribe" [(ngModel)]="userModel.subscribe" value="subscription">
-            <label class="form-check-label">Send me promotional offers</label>
-        </div>  
-    <div ngModelGroup="address">
-        <div class="form-group">
-        <label>House Number</label>
-        <input type="text" class="form-control" ngModel name="housenumber">
-        </div>
-        <div class="form-group">
-        <label>Street</label>
-        <input type="email" class="form-control" ngModel name="street">
-        </div>
-        <div class="form-group">
-        <label>State</label>
-        <input type="tel" class="form-control" ngModel name="state">
-        </div>
-        <div class="form-group">
-        <label>Zip code</label>
-        <input type="number" class="form-control" ngModel name="zipcode">
-        </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
     </form>
-</div>
-<div class="jumbotron">
-    <p>
-    {{userform.value | json}}
-    {{userModel | json}}
-    </p>    
 </div>
