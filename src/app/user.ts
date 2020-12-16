@@ -4,8 +4,8 @@ export class User {
         public email: string,
         public username: number,
         public role: string,
-        public timePref: string,
-        public subscribe: boolean
+        public address: string,
+        public password: boolean
     ){}
 
 }
