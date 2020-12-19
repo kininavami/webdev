@@ -3,7 +3,7 @@
         <div class="login-group">
             <clr-select-container>
                 <label class="clr-sr-only">User Role</label>
-                <select clrSelect name="type" [(ngModel)]="form.type">
+                <select clrSelect name="type">
                     <option value="Engineer">Engineer</option>
                     <option value="Manager">Manager</option>
                     <option value="Admin">Admin</option>
@@ -11,21 +11,28 @@
             </clr-select-container>
             <clr-input-container>
                 <label class="clr-sr-only">Username</label>
-                <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="form.username"/>
+                <input type="text" name="username" clrInput placeholder="Username" [(ngModel)] = "name" required />
+                <clr-control-error>This field is required!</clr-control-error>
             </clr-input-container>
             <clr-password-container>
                 <label class="clr-sr-only">Password</label>
-                <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="form.password"/>
+                <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)] = "password" required/>
             </clr-password-container>
             <clr-checkbox-wrapper>
                 <label>Remember me</label>
-                <input type="checkbox" name="rememberMe" clrCheckbox [(ngModel)]="form.rememberMe"/>
+                <input type="checkbox" name="rememberMe" clrCheckbox />
             </clr-checkbox-wrapper>
             <!--<div class="error active">
                 Invalid user name or password
             </div> -->
-            <button type="submit" class="btn btn-primary" routerLink="/product-list">NEXT</button>
+            <!-- routerLink="/product-list" -->
+            <button type="submit" class="btn btn-primary"  (click) = "OnLogin()">NEXT</button>
             <a class="signup" routerLink="/register">Sign up for a Company ID</a>
+            <div *ngIf="showErrorMessage" class="alert alert-danger">
+                            <span class="alert-text">
+                                Invalid username and password Please try again
+                            </span>
+              </div>
         </div>
     </form>
 </div>

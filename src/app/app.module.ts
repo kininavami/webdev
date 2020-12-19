@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NavComponent } from './nav/nav.component';
 import { CartComponent } from './cart/cart.component';
-
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { CartComponent } from './cart/cart.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ClarityModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

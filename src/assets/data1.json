@@ -1,0 +1,18 @@
+[
+        {
+            "id": 4,
+            "created_at": "2020-12-14T07:32:55.950592Z",
+            "update_at": "2020-12-14T07:32:55.950592Z",
+            "name": "magic mouse apple original",
+            "description": "authentic apple mouse for best experience to work with MacBook Pros",
+            "cost": 7500
+        },
+        {
+            "id": 6,
+            "created_at": "2020-12-14T07:33:20.863126Z",
+            "update_at": "2020-12-14T07:33:20.863126Z",
+            "name": "MacBook Pro 16'",
+            "description": "MacBookPro",
+            "cost": 200000
+        }
+    ]
