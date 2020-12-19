@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NavComponent } from './nav/nav.component';
 import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { MgrDashboardComponent } from './mgr-dashboard/mgr-dashboard.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { CartComponent } from './cart/cart.component';
     LoginComponent,
     ProductListComponent,
     NavComponent,
-    CartComponent
+    CartComponent,
+    CartItemComponent,
+    AdminDashboardComponent,
+    MgrDashboardComponent
   ],
   imports: [
     BrowserModule,
